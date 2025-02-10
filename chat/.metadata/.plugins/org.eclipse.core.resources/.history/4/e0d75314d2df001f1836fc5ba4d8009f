@@ -1,0 +1,11 @@
+package com.chat.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.chat.entites.Room;
+
+public interface RoomRepository extends MongoRepository<Room, String>{
+	
+	public Room getRoomById(String roomId);
+
+}

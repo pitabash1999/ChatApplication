@@ -1,0 +1,33 @@
+package com.chat.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.chat.entites.Room;
+import com.chat.repository.RoomRepository;
+
+@Service
+public class RoomServiceImpl implements RoomService{
+	
+	@Autowired
+	private RoomRepository roomRepository;
+
+	@Override
+	public Optional<Room> getRoom(String roomId) {
+		public Optional<Room> getRoom(String roomId) {
+		    return roomRepository.findById(roomId);
+		}
+
+	}
+	
+	public Room save(Room room) {
+		Room savedRoom=roomRepository.save(room);
+		return savedRoom;
+	}
+
+	
+	
+
+}
